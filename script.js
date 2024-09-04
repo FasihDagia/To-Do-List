@@ -34,3 +34,7 @@ function deletetask(removetask) {
     removetask.remove();
 }
 
+function editTask(edittask) {
+    const taskspan = edittask.querySelector('span');
+    taskspan.textContent = prompt("Edit the Task:");
+}
