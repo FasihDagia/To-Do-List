@@ -70,7 +70,7 @@ li {
     /* align-items: center; */
 }
 
-#edit {
+.edit {
     background-color: #007bff;
     color: white;
     border: none;
@@ -80,13 +80,13 @@ li {
     margin-left: 10px;
 }
 
-#edit:hover {
+.edit:hover {
     background-color: #0056b3;
     transition: 0.3s;
 }
 
-#delete{
-    background-color: #007bff;
+.delete{
+    background-color: #dc3545;
     color: white;
     border: none;
     padding: 5px 10px;
@@ -94,7 +94,7 @@ li {
     cursor: pointer;
     margin-left: 10px;
 }
-#delete:hover {
+.delete:hover {
     background-color: #c82333;
     transition: 0.3s;
 }

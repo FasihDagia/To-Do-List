@@ -10,16 +10,27 @@ function addtask() {
     const taskinput = document.getElementById('new-task');
     const tasktext = taskinput.value.trim();
 
-    if(tasktext === '') return;
+    if (tasktext === '') return;
 
     const li = document.createElement('li');
     li.innerHTML = `
     <span>${tasktext}</span>
     <div>
-    <button id="edit">Edit</button>
-    <button id="delete">Delete</button>
+    <button class="edit">Edit</button>
+    <button class="delete">Delete</button>
     </div>`;
 
     document.getElementById('task-list').appendChild(li);
-    
+
+    li.querySelector('.delete').addEventListener('click', () => deletetask(li));
+    li.querySelector('.edit').addEventListener('click', () => editTask(li));
+
+
+    taskinput.value = ''
 }
+
+
+function deletetask(removetask) {
+    removetask.remove();
+}
+
