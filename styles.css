@@ -26,6 +26,8 @@ body {
     width: auto;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 h1 {
@@ -109,4 +111,15 @@ li {
     padding: 8px;
     border: 1px solid #ddd;
     border-radius: 5px;
+}
+
+#done{
+    /* margin: 5px; */
+    margin-left:10px;
+}
+
+#tick{
+    text-decoration: line-through;
+    color: rgb(153, 152, 152);
+    transition: 0.3s;
 }

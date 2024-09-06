@@ -16,7 +16,7 @@ function addtask() {
     li.innerHTML = `
     <span>${tasktext}</span>
     <div>
-    <input type="checkbox">
+    <input type="checkbox" id="done">
     <button class="edit">Edit</button>
     <button class="delete">Delete</button>
     </div>`;
@@ -25,6 +25,7 @@ function addtask() {
 
     li.querySelector('.delete').addEventListener('click', () => deletetask(li));
     li.querySelector('.edit').addEventListener('click', () => editTask(li));
+    li.querySelector('#done').addEventListener('click', () => donetask(li));
 
 
     taskinput.value = ''
@@ -60,4 +61,15 @@ function editTask(edittask) {
     edit.focus();
 
 
+}
+
+function donetask(doneTask) {
+    const donetaskspan = doneTask.querySelector('span');
+    const checkbox = document.getElementById('done');
+    if (checkbox.checked) {
+        donetaskspan.id = 'tick'
+    }
+    else{
+        donetaskspan.id = ''
+    }
 }
