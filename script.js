@@ -16,6 +16,7 @@ function addtask() {
     li.innerHTML = `
     <span>${tasktext}</span>
     <div>
+    <input type="checkbox">
     <button class="edit">Edit</button>
     <button class="delete">Delete</button>
     </div>`;
@@ -36,9 +37,27 @@ function deletetask(removetask) {
 
 function editTask(edittask) {
     const taskspan = edittask.querySelector('span');
-    const edited = prompt("Edit the Task:");
-    
-    if (edited === '') return;
+    const edit = document.createElement('input');
+    edit.type = 'text'
+    edit.id = 'edited'
+    edit.placeholder = 'Edit Task...'
+    taskspan.replaceWith(edit);
 
-    taskspan.textContent = edited
+    edit.addEventListener('keydown', function (event) {
+        if (event.key === 'Enter') {
+            const newtaskspan = document.createElement('span');
+            if (edit.value === '') {
+                edit.replaceWith(taskspan);
+            }
+            else {
+                newtaskspan.textContent = edit.value;
+                edit.replaceWith(newtaskspan);
+            }
+        }
+    });
+
+
+    edit.focus();
+
+
 }

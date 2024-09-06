@@ -23,7 +23,9 @@ body {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 300px;
+    width: auto;
+    display: flex;
+    flex-direction: column;
 }
 
 h1 {
@@ -60,6 +62,7 @@ h1 {
 }
 
 li {
+    width: auto;
     padding: 10px;
     background-color: #f9f9f9;
     border: 1px solid #ddd;
@@ -78,6 +81,7 @@ li {
     border-radius: 4px;
     cursor: pointer;
     margin-left: 10px;
+    margin-bottom: 0;
 }
 
 .edit:hover {
@@ -86,6 +90,7 @@ li {
 }
 
 .delete{
+    margin-bottom: 0;
     background-color: #dc3545;
     color: white;
     border: none;
@@ -97,4 +102,11 @@ li {
 .delete:hover {
     background-color: #c82333;
     transition: 0.3s;
+}
+
+#edited{
+    width: 100px;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
 }
